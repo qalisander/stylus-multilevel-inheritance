@@ -10,7 +10,7 @@ use stylus_sdk::prelude::*;
 sol_storage! {
     #[entrypoint]
     struct TopLevelContract {
-        #[borrow]
+        #[borrow] // can be removed at patched version
         SecondLevelContract child;
     }
 }
@@ -21,7 +21,7 @@ impl TopLevelContract {}
 
 sol_storage! {
     struct SecondLevelContract {
-        #[borrow]
+        #[borrow] // can be removed at patched version
         ThirdLevelContract child;
     }
 }
